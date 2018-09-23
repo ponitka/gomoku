@@ -14,17 +14,9 @@ class Sidebar(Gtk.Box):
     self.set_orientation(Gtk.Orientation.VERTICAL)
     self.set_spacing(20)
 
-    button_new_game = Gtk.Button(label = "New game")
-    button_new_game.connect("clicked", self.new_game)
-    self.add(button_new_game)
-    Gtk.Widget.set_size_request(button_new_game, 20, 20)
-
     self.label = Gtk.Label("It's your turn.")
     self.add(self.label)
     self.label.set_size_request(180, -1)
-   
-  def new_game(self, widget):
-    self.GameWindow.new_game()
 
   def update(self):
     if self.Players[0].bot == True:
