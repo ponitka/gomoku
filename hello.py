@@ -54,7 +54,7 @@ class HelloWindow(Gtk.Window):
 
     ################### 
 
-    self.description = Gtk.Label("Players alternate turns picking an empty square.\nThe winner is the first player to form an unbroken chain of five squares\n horizontally, vertically, or diagonally.")
+    self.description = Gtk.Label("Players alternate turns picking an empty square.\nThe winner is the first player to form an unbroken chain of five squares\n horizontally, vertically, or diagonally.\nClick N to start a new game.")
     self.description.set_justify(Gtk.Justification.CENTER)
     box.pack_start(self.description, True, True, 0)
 
