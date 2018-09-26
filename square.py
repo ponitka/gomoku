@@ -53,13 +53,17 @@ class Square(Gtk.Box):
     self.MakeMove(self.Players[0])
 
   def on_button_mouse(self, widget, ok):
-    if self.Players[0].move_allowed == False or self.Occupant != -1 or self.Players[0].bot == True:
+    if self.Occupant != -1:
+      return
+
+    if ok == False:
+      self.change_color("white", self.label2)
+
+    if self.Players[0].move_allowed == False or self.Players[0].bot == True:
       return
 
     if ok == True:
       self.change_color(self.Players[0].color, self.label2)
-    else:
-      self.change_color("white", self.label2)
 
   def MakeMove(self, Player):
     if Player.move_allowed == False or self.Occupant != -1:
